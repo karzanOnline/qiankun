@@ -184,10 +184,7 @@ export const process = (
   stylesheetElement: HTMLStyleElement | HTMLLinkElement,
   appName: string,
 ): void => {
-  // lazy singleton pattern
-  if (!processor) {
-    processor = new ScopedCSS();
-  }
+  processor = new ScopedCSS();
 
   if (stylesheetElement.tagName === 'LINK') {
     console.warn('Feature: sandbox.experimentalStyleIsolation is not support for link element yet.');
